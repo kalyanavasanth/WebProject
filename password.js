@@ -4,6 +4,13 @@ var Context=Canvas.getContext("2d");
 var strength=0;
     
 var pwd=document.getElementById("password").value;
+
+if(pwd.length<5){
+document.getElementById("match").innerHTML="Password has less than 5 characters"
+ document.getElementById("passwordRepeat").disabled = true;
+}
+else{
+ document.getElementById("passwordRepeat").disabled = false;
     if(/[a-z]/.test(pwd)){
         strength+=25;
         SetStyle(Context,strength);
@@ -33,10 +40,14 @@ Context.fillRect(0,0,strength,Canvas.height);
         strength=0;
     }
 if(/[~!\^&*()-+=><?\/.,"';:|{}\[\]`]/.test(pwd)){
-        document.getElementById("match").innerHTML="Password has invalid characters";
+ document.getElementById("match").innerHTML="Password has invalid characters";
+ document.getElementById("passwordRepeat").disabled = true;
+
     }
 else{
 document.getElementById("match").innerHTML="";
+ document.getElementById("passwordRepeat").disabled = false;
+}
 }
 }
    
