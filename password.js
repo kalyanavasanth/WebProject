@@ -22,7 +22,7 @@ Context.fillRect(0,0,strength,Canvas.height);
         Context.clearRect(0,0,Canvas.width,Canvas.height);
         Context.fillRect(0,0,strength,Canvas.height);
     }
-    if(/[@#$%]/.test(pwd)){
+    if(/[@#$%_]/.test(pwd)){
         strength+=25;
         SetStyle(Context,strength);
         Context.clearRect(0,0,Canvas.width,Canvas.height);
@@ -32,6 +32,12 @@ Context.fillRect(0,0,strength,Canvas.height);
         Context.clearRect(0,0,Canvas.width,Canvas.height);
         strength=0;
     }
+if(/[~!\^&*()-+=><?\/.,"';:|{}\[\]`]/.test(pwd)){
+        document.getElementById("match").innerHTML="Password has invalid characters";
+    }
+else{
+document.getElementById("match").innerHTML="";
+}
 }
    
    function SetStyle(context,strength){
