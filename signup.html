@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <script src="js/jquery-1.11.2.min.js"></script>
+</head>
+<body onload="GenerateCaptcha()">
+	<div class="container page">
+		<div class="page-header" align="center"><h1>Sign up</h1></div>
+		<form class="form-horizontal" role="form">
+			<div  id="box">
+				
+			<div class="form-group">
+				<label class="control-label col-sm-4 sr-only" for="name">Name</label>
+                 <div class="col-sm-4">
+                 <input type="text" class="form-control in" id="name" placeholder="Enter name" onkeyup="validateName()" onblur="validateName()" required="required">
+             </div>
+             <span class="text-danger" id="name1"></span>
+			</div>
+			
+			<div class="form-group">
+				<label class="control-label col-sm-4 sr-only" for="uname">Username</label>
+                 <div class="col-sm-4">
+                 <input type="text" class="form-control in" id="uname" placeholder="Set Username" onkeyup="validateUsername()" onblur="validateUsername()" required="required" >
+             </div>
+             <span class="text-danger" id="name2"></span>
+			</div>
+			
+			<div class="form-group">
+				<label class="control-label col-sm-4 sr-only" for="email">Email</label>
+                 <div class="col-sm-4">
+                 <input type="email" class="form-control in" id="email" placeholder="someone@example.com" onkeyup="validateEmail()" onblur="validateEmail()"required="required">
+             </div>
+             <span id="mail" class="text-danger"></span>
+			</div>
+			
+			<div class="form-group">
+				<label class="control-label col-sm-4 sr-only" for="email1">Confirm Email</label>
+                 <div class="col-sm-4">
+                 <input type="email" class="form-control in" id="email1" placeholder="Confirm your Email" onkeyup="validateConfirmEmail()" onblur="validateConfirmEmail()" "required" disabled="true">
+             </div>
+             <span id="mail@" class="text-danger"></span><span id="mail@1" class="text-danger"></span>
+			</div>
+			
+			<div class="form-group">
+				<label class="control-label col-sm-4 sr-only" for="pwd">Password</label>
+                 <div class="col-sm-4">
+                 <input type="password" class="form-control in" id="password" placeholder="Set a Password" required="required" onkeyup="TestStrength()">
+                 <span class="text-info" id="pasinfo"><small></small></span>
+             </div>
+            <span class="text-info text-center"><strong>strength</strong></span>
+            <canvas id='MyCanvas' class='bar' width='100' height='5'></canvas>
+            </div>
+			
+			<div class="form-group">
+				<label class="control-label col-sm-4 sr-only" for="pwd1">Confirm Password</label>
+                 <div class="col-sm-4">
+                 <input type="password" class="form-control in" id="passwordRepeat" placeholder="confirm Password" required="required" onkeyup="MatchPassword()" onblur="MatchPassword()" >
+             </div>
+              <span id="match" class="text-danger"></span>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4" align="left">
+			<div>	<canvas id="myCanvas" width="150" height="50" class="bar"></canvas></div>
+  		
+  				<div><span id="CaptchaText" class="capMessag text-danger"><strong></strong></span></div>
+  								
+  		<div class="span1">	<input type='text' size="4" id='CaptchaBox' name='CaptchaBox' />
+  			
+  			<a class="btn btn-mini" value='generate' onclick='GenerateCaptcha()' >
+  				<span class="glyphicon glyphicon-refresh "></span>
+  			</a>
+  			</div>
+			</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4">
+					<div class="progress">
+              <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="50"
+                     aria-valuemin="0" aria-valuemax="100" style="width:0%" id="pbar">
+                            0%
+                </div>
+                </div>
+				</div>
+				<div class="col-md-3">
+				</div>
+			
+				<div class="col-md-6" align="right">
+				<input type="submit" class="btn btn-success" value="submit" onclick="ValidateCaptcha()">
+				</div>
+				<div class="col-md-6" align="left">
+				<button class="btn btn-warning " type="button">reset</button>
+				</div>
+			</div>
+			
+			</div>
+		</form>
+	</div>
+	<script src="js/web.js"></script>
+	
+			<script src="js/captcha.js"></script>
+</body>
