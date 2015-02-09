@@ -1,0 +1,81 @@
+.button_example
+{
+border:1px solid #7eb9d0;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 5px;
+font-size:12px;
+font-family:arial, sans-serif;
+padding: 12px 12px 12px 12px;
+text-decoration:none;
+text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+font-weight:bold;
+color: #FFFFFF;
+background-color: #a7cfdf;
+background-image: -webkit-gradient(linear, left top, left bottom, from(#92cfde), to(#76bdd1));
+background-image: linear-gradient(to bottom, #92cfde, #76bdd1);
+width:95%;
+}
+.button_example:hover
+{
+border:1px solid #44adc6;
+background-color: #6bbed2;
+background-image: -webkit-gradient(linear, left top, left bottom, from(#6bbed2), to(#50abc4));
+background-image: linear-gradient(to bottom, #6bbed2, #50abc4);
+}
+.hidden 
+{
+display: none;
+}
+.visible
+ {
+display: normal;
+}
+body 
+{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333333;
+  background-color: #f5f5f5;
+}
+
+.contcustom 
+{
+width: 300px;
+border-radius: 0.5 rem;
+margin:auto;
+background-color: white;
+padding: 32px;
+border:1px solid #44adc6;
+}
+input
+{
+width: 85%;
+margin-bottom: 17px;
+padding: 15px;
+background-color: #ECF4F4;
+border-radius: 9px;
+border: none;
+}
+
+.line-space
+{
+line-height: 30px;
+}
+.box
+{
+font-family:"Times New Roman", Times, serif;
+font-size:16px;
+font-weight:bold;
+color: #5E5E5E;
+text-align:left;
+}
+h1
+{
+color:#5E5E5E;
+}
+.page-header
+{
+margin:100px;
+}
